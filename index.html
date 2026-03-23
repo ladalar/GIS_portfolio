@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruzsina Ladanyi – GIS Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Fruzsina Ladanyi</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">GIS Analyst &amp; Spatial Data Specialist</p>
+      <h1 class="hero-title">Fruzsina Ladanyi</h1>
+      <p class="hero-description">
+        Turning raw geospatial data into actionable insights through
+        spatial analysis, temporal visualization, and interactive web mapping.
+      </p>
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a GIS analyst passionate about spatial data processing,
+            temporal analysis, and interactive visualization. My work
+            focuses on transforming complex datasets into clear,
+            compelling maps and web applications that support decision-making
+            in public safety, transportation, and environmental planning.
+          </p>
+          <p>
+            My technical toolkit includes QGIS, ArcGIS, Python, and modern
+            web mapping libraries, enabling end-to-end workflows from raw
+            data ingestion to polished, interactive deliverables.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <span class="skill-icon">🗺️</span>
+            <span>QGIS</span>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🌐</span>
+            <span>ArcGIS</span>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🐍</span>
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">📊</span>
+            <span>Temporal Analysis</span>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🔥</span>
+            <span>Heatmap Rendering</span>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">💻</span>
+            <span>Web GIS (qgis2web)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- ── Project 1: California Traffic Accidents ── -->
+      <article class="project-card" id="switrs">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-tag">QGIS</span>
+            <span class="project-tag">Temporal Controller</span>
+            <span class="project-tag">Heatmap</span>
+            <span class="project-tag">qgis2web</span>
+          </div>
+          <h3 class="project-title">
+            California Traffic Accident Visualization
+          </h3>
+          <p class="project-subtitle">
+            Dynamic temporal heatmap of statewide collision hotspots
+            using the SWITRS dataset
+          </p>
+        </div>
+
+        <!-- Timelapse animation viewer -->
+        <div class="animation-container">
+          <div class="animation-viewer" id="animationViewer">
+            <div class="animation-placeholder" id="animationPlaceholder">
+              <span class="placeholder-icon">🎞️</span>
+              <p>Timelapse animation frames will appear here.</p>
+              <p class="placeholder-hint">
+                Add numbered images (e.g. <code>frame_01.png</code> …) to
+                the <code>images/switrs/</code> folder and update the
+                frame list in <code>js/main.js</code>.
+              </p>
+            </div>
+            <img
+              id="animationFrame"
+              class="animation-frame hidden"
+              src=""
+              alt="Traffic accident heatmap frame"
+            />
+          </div>
+
+          <!-- Animation controls -->
+          <div class="animation-controls" id="animationControls">
+            <button class="ctrl-btn" id="btnFirst" title="First frame" aria-label="First frame">⏮</button>
+            <button class="ctrl-btn" id="btnPrev"  title="Previous frame" aria-label="Previous frame">◀</button>
+            <button class="ctrl-btn ctrl-btn--play" id="btnPlay" title="Play / Pause" aria-label="Play">▶</button>
+            <button class="ctrl-btn" id="btnNext"  title="Next frame" aria-label="Next frame">▶</button>
+            <button class="ctrl-btn" id="btnLast"  title="Last frame" aria-label="Last frame">⏭</button>
+            <input
+              type="range"
+              id="frameSlider"
+              class="frame-slider"
+              min="0"
+              value="0"
+              aria-label="Frame position"
+            />
+            <span class="frame-label" id="frameLabel">–</span>
+          </div>
+        </div>
+
+        <!-- Project details -->
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>Project Overview</h4>
+            <p>
+              This project visualizes historical traffic accidents in
+              California using the Statewide Integrated Traffic Records
+              System (SWITRS) dataset. Using QGIS, thousands of point
+              locations representing traffic collisions were processed and
+              aggregated into monthly intervals to create a dynamic
+              temporal heatmap. The visualization highlights patterns and
+              trends in accident density over time, enabling insights into
+              high-risk areas and seasonal fluctuations.
+            </p>
+          </div>
+
+          <div class="detail-columns">
+            <div class="detail-section">
+              <h4>Technical Details</h4>
+              <ul>
+                <li>
+                  <strong>Data Source:</strong> California SWITRS (traffic
+                  collision records)
+                </li>
+                <li>
+                  <strong>Tools &amp; Technologies:</strong> QGIS, Temporal
+                  Controller, Heatmap renderer, GeoPackage, qgis2web
+                </li>
+              </ul>
+              <h5>Key Steps</h5>
+              <ol>
+                <li>
+                  Loaded and cleaned CSV collision data with geospatial
+                  coordinates.
+                </li>
+                <li>
+                  Converted the CSV into an editable memory / GeoPackage
+                  layer for analysis.
+                </li>
+                <li>
+                  Created a monthly aggregation field to support temporal
+                  animation.
+                </li>
+                <li>
+                  Applied a heatmap renderer to visualize accident density.
+                </li>
+                <li>
+                  Configured temporal properties in QGIS for smooth
+                  month-by-month animation.
+                </li>
+                <li>
+                  Exported an interactive web map using qgis2web for
+                  portfolio presentation.
+                </li>
+              </ol>
+            </div>
+
+            <div class="detail-section">
+              <h4>Outcome &amp; Insights</h4>
+              <ul>
+                <li>Dynamic visualization of accident trends over time.</li>
+                <li>
+                  Clear identification of hotspots and seasonal patterns.
+                </li>
+                <li>
+                  Interactive map suitable for web presentation, providing
+                  both technical demonstration and analytical storytelling.
+                </li>
+              </ul>
+
+              <h4 class="mt-1">Portfolio Highlights</h4>
+              <ul>
+                <li>Spatial data processing</li>
+                <li>Temporal analysis</li>
+                <li>Interactive visualization</li>
+                <li>Web GIS publishing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATES
+  ============================================================ -->
+  <section class="section" id="certificates">
+    <div class="container">
+      <h2 class="section-title">ArcGIS Certificates</h2>
+      <p class="section-intro">
+        Professional certifications demonstrating proficiency in
+        Esri's ArcGIS platform and spatial analysis methodologies.
+      </p>
+
+      <div class="certificates-grid" id="certificatesGrid">
+
+        <!-- Placeholder card – replace / duplicate for each certificate -->
+        <div class="cert-card cert-card--placeholder">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-body">
+            <p class="cert-title">Certificate Coming Soon</p>
+            <p class="cert-issuer">Esri / ArcGIS</p>
+            <p class="cert-note">
+              Upload your certificate image to
+              <code>images/certificates/</code> and add a new
+              <code>&lt;div class="cert-card"&gt;</code> block here.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="section section-alt" id="contact">
+    <div class="container container--narrow">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-intro">
+        Interested in collaboration or have a question? Feel free to
+        reach out.
+      </p>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="contactName">Name</label>
+          <input
+            type="text"
+            id="contactName"
+            name="name"
+            placeholder="Your name"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="contactEmail">Email</label>
+          <input
+            type="email"
+            id="contactEmail"
+            name="email"
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="contactMessage">Message</label>
+          <textarea
+            id="contactMessage"
+            name="message"
+            rows="5"
+            placeholder="Your message…"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-notice" id="formNotice"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="footerYear"></span> Fruzsina Ladanyi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

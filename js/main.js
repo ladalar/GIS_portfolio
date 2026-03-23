@@ -81,9 +81,27 @@
     return;
   }
 
-  // Hide placeholder, show image
-  placeholder.classList.add('hidden');
-  frameImg.classList.remove('hidden');
+  // Only hide placeholder after an image successfully loads
+  let hasLoadedAtLeastOneFrame = false;
+
+  // Initial state: placeholder visible, image loads in background
+  placeholder.hidden = false;
+  frameImg.hidden = false;
+  frameImg.classList.add('hidden');
+
+  frameImg.addEventListener('load', () => {
+    hasLoadedAtLeastOneFrame = true;
+    placeholder.hidden = true;
+    placeholder.textContent = '';
+    frameImg.classList.remove('hidden');
+  });
+
+  frameImg.addEventListener('error', () => {
+    if (!hasLoadedAtLeastOneFrame) {
+      placeholder.hidden = false;
+      frameImg.classList.add('hidden');
+    }
+  });
 
   let currentIndex = 0;
   let playInterval = null;

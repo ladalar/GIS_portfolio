@@ -52,7 +52,10 @@
    *   const START_DATE = new Date(2020, 0); // January 2020
    *   const LABELS = [];  // leave empty to auto-generate from START_DATE
    */
-  const FRAMES     = [];          // ← add image paths here
+  const FRAME_COUNT = 13;
+  const FRAMES = Array.from({ length: FRAME_COUNT }, (_, i) =>
+    `images/switrs/${String(i).padStart(4, '0')}.png`
+  );
   const START_DATE = new Date(2020, 0);
   const LABELS     = [];          // ← optional: one label per frame
   const FPS        = 3;           // frames per second during playback
@@ -78,9 +81,27 @@
     return;
   }
 
-  // Hide placeholder, show image
-  placeholder.classList.add('hidden');
-  frameImg.classList.remove('hidden');
+  // Only hide placeholder after an image successfully loads
+  let hasLoadedAtLeastOneFrame = false;
+
+  // Initial state: placeholder visible, image loads in background
+  placeholder.hidden = false;
+  frameImg.hidden = false;
+  frameImg.classList.add('hidden');
+
+  frameImg.addEventListener('load', () => {
+    hasLoadedAtLeastOneFrame = true;
+    placeholder.hidden = true;
+    placeholder.textContent = '';
+    frameImg.classList.remove('hidden');
+  });
+
+  frameImg.addEventListener('error', () => {
+    if (!hasLoadedAtLeastOneFrame) {
+      placeholder.hidden = false;
+      frameImg.classList.add('hidden');
+    }
+  });
 
   let currentIndex = 0;
   let playInterval = null;

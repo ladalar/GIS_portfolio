@@ -198,7 +198,7 @@ createAnimation({
   btnPlayId:    'rentBtnPlay',
   btnNextId:    'rentBtnNext',
   btnLastId:    'rentBtnLast',
-  sliderId:     'rentSlider',
+  sliderId:     'rentSlider',  // ✅ Changed from 'frameSlider'
   frameLabelId: 'rentLabel',
 });
 

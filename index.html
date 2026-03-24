@@ -264,33 +264,20 @@
         <div class="animation-container">
           <div class="animation-viewer" id="rentViewer">
             <div class="animation-placeholder" id="rentPlaceholder">
-              <span class="placeholder-icon">🏠</span>
-              <p>Rent price timelapse animation frames will appear here.</p>
+              <span class="placeholder-icon">📍</span>
+              <p>Loading animation...</p>
+              <p class="placeholder-hint">Please wait</p>
             </div>
-            <img
-              id="rentFrame"
-              class="animation-frame hidden"
-              src=""
-              alt="Southern California rent price map frame"
-            />
+            <img class="animation-frame" id="rentFrame" alt="Rent price frame" />
           </div>
-
-          <!-- Animation controls -->
           <div class="animation-controls" id="rentControls">
-            <button class="ctrl-btn" id="rentBtnFirst" title="First frame" aria-label="First frame">⏮</button>
-            <button class="ctrl-btn" id="rentBtnPrev"  title="Previous frame" aria-label="Previous frame">◀</button>
-            <button class="ctrl-btn ctrl-btn--play" id="rentBtnPlay" title="Play / Pause" aria-label="Play">▶</button>
-            <button class="ctrl-btn" id="rentBtnNext"  title="Next frame" aria-label="Next frame">▶</button>
-            <button class="ctrl-btn" id="rentBtnLast"  title="Last frame" aria-label="Last frame">⏭</button>
-            <input
-              type="range"
-              id="rentSlider"
-              class="frame-slider"
-              min="0"
-              value="0"
-              aria-label="Frame position"
-            />
-            <span class="frame-label" id="rentLabel">–</span>
+            <button class="ctrl-btn" id="rentBtnFirst" title="First">⏮</button>
+            <button class="ctrl-btn" id="rentBtnPrev" title="Previous">◀</button>
+            <button class="ctrl-btn ctrl-btn--play" id="rentBtnPlay" title="Play/Pause">▶</button>
+            <button class="ctrl-btn" id="rentBtnNext" title="Next">▶▶</button>
+            <button class="ctrl-btn" id="rentBtnLast" title="Last">⏭</button>
+            <input type="range" id="rentSlider" class="frame-slider" min="0" max="134" value="0" />
+            <span class="frame-label" id="rentLabel">0/134</span>
           </div>
         </div>
 

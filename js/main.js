@@ -165,28 +165,3 @@
   showFrame(0);
 })();
 
-/* ── Contact form (client-side demo) ──────────────────────── */
-(function initContactForm() {
-  const form   = document.getElementById('contactForm');
-  const notice = document.getElementById('formNotice');
-  if (!form) return;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const name    = form.name.value.trim();
-    const email   = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    if (!name || !email || !message) {
-      notice.style.color = '#f85149';
-      notice.textContent = 'Please fill in all fields.';
-      return;
-    }
-
-    // Replace this with your preferred form handling
-    // (e.g. Formspree, EmailJS, a backend endpoint, etc.)
-    notice.style.color = '';
-    notice.textContent = '✓ Thank you! Your message has been received.';
-    form.reset();
-  });
-})();

@@ -369,6 +369,123 @@
         </div>
       </article>
 
+      <!-- ── Project 3: Soccer Player Market Value by Birthplace ── -->
+      <article class="project-card project-card--next" id="market-value">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-tag">QGIS</span>
+            <span class="project-tag">Choropleth Map</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Data Cleaning</span>
+            <span class="project-tag">Spatial Analysis</span>
+          </div>
+          <h3 class="project-title">
+            Soccer Player Market Value by Birthplace
+          </h3>
+          <p class="project-subtitle">
+            Global choropleth map aggregating professional soccer player
+            market values by country of birth to reveal the geographic
+            distribution of soccer talent
+          </p>
+        </div>
+
+        <!-- Static choropleth map viewer -->
+        <div class="map-container">
+          <div class="map-viewer">
+            <img
+              src="images/market_value.png"
+              alt="Choropleth map showing total soccer player market value by country of birth"
+            />
+          </div>
+        </div>
+
+        <!-- Project details -->
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>Project Overview</h4>
+            <p>
+              This project develops a geospatial visualization analyzing the
+              global distribution of soccer talent by aggregating player market
+              values based on their country of birth. Player-level data was
+              cleaned and standardized to resolve inconsistent country names
+              (e.g., historical entities and regional naming variations),
+              ensuring accurate joins with geographic shapefiles.
+              Country-level aggregates were then visualized as a choropleth
+              map in QGIS, with formatted labels and map elements designed
+              to enhance readability and interpretability.
+            </p>
+          </div>
+
+          <div class="detail-columns">
+            <div class="detail-section">
+              <h4>Technical Details</h4>
+              <ul>
+                <li>
+                  <strong>Data Source:</strong> Professional soccer player
+                  market value dataset with country-of-birth attributes
+                </li>
+                <li>
+                  <strong>Tools &amp; Technologies:</strong> QGIS, Python,
+                  Choropleth symbology, Geographic shapefiles
+                </li>
+              </ul>
+              <h5>Key Steps</h5>
+              <ol>
+                <li>
+                  Cleaned and standardized inconsistent country names,
+                  including historical entities and regional naming
+                  variations.
+                </li>
+                <li>
+                  Aggregated player-level market values into country-level
+                  totals.
+                </li>
+                <li>
+                  Joined aggregated data to world shapefiles using
+                  standardized country identifiers.
+                </li>
+                <li>
+                  Applied choropleth symbology in QGIS to represent
+                  total market value per country.
+                </li>
+                <li>
+                  Designed map elements including legend, scale bar, and
+                  formatted value labels (millions/billions) to enhance
+                  readability.
+                </li>
+              </ol>
+            </div>
+
+            <div class="detail-section">
+              <h4>Outcome &amp; Insights</h4>
+              <ul>
+                <li>
+                  Clear global view of soccer talent concentration by
+                  country of birth, highlighting dominant talent-producing
+                  nations.
+                </li>
+                <li>
+                  Effective use of value formatting (millions/billions) to
+                  make large market figures accessible and interpretable.
+                </li>
+                <li>
+                  Demonstrates data cleaning workflows for handling
+                  real-world inconsistencies in country name standardization.
+                </li>
+              </ul>
+
+              <h4 class="mt-1">Portfolio Highlights</h4>
+              <ul>
+                <li>Country-name standardization and data cleaning</li>
+                <li>Attribute join with geographic shapefiles</li>
+                <li>Choropleth map design in QGIS</li>
+                <li>Legend and label formatting for large numeric values</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 

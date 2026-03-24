@@ -240,6 +240,135 @@
         </div>
       </article>
 
+      <!-- ── Project 2: Southern California Rent Price Analysis ── -->
+      <article class="project-card project-card--next" id="rent">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-tag">QGIS</span>
+            <span class="project-tag">PyQGIS</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Spatial Analysis</span>
+            <span class="project-tag">Zillow ZORI</span>
+          </div>
+          <h3 class="project-title">
+            Southern California Rent Price Analysis &amp; Time-Series Visualization
+          </h3>
+          <p class="project-subtitle">
+            ZIP-level geospatial analysis of rent trends across Southern
+            California using Zillow ZORI data integrated with U.S. Census
+            ZCTA shapefiles (2015–2026)
+          </p>
+        </div>
+
+        <!-- Timelapse animation viewer -->
+        <div class="animation-container">
+          <div class="animation-viewer" id="rentViewer">
+            <div class="animation-placeholder" id="rentPlaceholder">
+              <span class="placeholder-icon">📍</span>
+              <p>Loading animation...</p>
+              <p class="placeholder-hint">Please wait</p>
+            </div>
+            <img class="animation-frame" id="rentFrame" alt="Rent price frame" />
+          </div>
+          <div class="animation-controls" id="rentControls">
+            <button class="ctrl-btn" id="rentBtnFirst" title="First">⏮</button>
+            <button class="ctrl-btn" id="rentBtnPrev" title="Previous">◀</button>
+            <button class="ctrl-btn ctrl-btn--play" id="rentBtnPlay" title="Play/Pause">▶</button>
+            <button class="ctrl-btn" id="rentBtnNext" title="Next">▶▶</button>
+            <button class="ctrl-btn" id="rentBtnLast" title="Last">⏭</button>
+            <input type="range" id="rentSlider" class="frame-slider" min="0" max="134" value="0" />
+            <span class="frame-label" id="rentLabel">0/134</span>
+          </div>
+        </div>
+
+        <!-- Project details -->
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>Project Overview</h4>
+            <p>
+              This project develops an interactive geospatial analysis to
+              visualize and analyze rent price trends across Southern
+              California using ZIP-level data. Zillow Observed Rent Index
+              (ZORI) data was integrated with U.S. Census ZCTA shapefiles
+              in QGIS to create a spatially accurate representation of
+              housing costs over time. A dynamic visualization pipeline
+              built with PyQGIS automates temporal rendering across 100+
+              monthly time steps, enabling a time-lapse animation that
+              highlights rent growth patterns and regional disparities.
+            </p>
+          </div>
+
+          <div class="detail-columns">
+            <div class="detail-section">
+              <h4>Technical Details</h4>
+              <ul>
+                <li>
+                  <strong>Data Sources:</strong> Zillow Observed Rent Index
+                  (ZORI) CSV; U.S. Census Bureau ZCTA shapefiles
+                </li>
+                <li>
+                  <strong>Tools &amp; Technologies:</strong> QGIS, PyQGIS,
+                  Python, Graduated Symbology, Spatial Join, GeoPackage
+                </li>
+              </ul>
+              <h5>Key Steps</h5>
+              <ol>
+                <li>
+                  Performed data preprocessing and spatial joins to align
+                  non-spatial ZORI CSV data with ZCTA geographic boundaries.
+                </li>
+                <li>
+                  Addressed ZIP code formatting inconsistencies and partial
+                  data coverage during cleaning.
+                </li>
+                <li>
+                  Filtered and extracted Southern California regions using
+                  spatial selection techniques.
+                </li>
+                <li>
+                  Applied graduated symbology to represent rent values
+                  with a consistent classification scheme across all frames.
+                </li>
+                <li>
+                  Scripted programmatic map updates in PyQGIS to iterate
+                  through 100+ monthly time steps automatically.
+                </li>
+                <li>
+                  Exported frame-by-frame PNG outputs and assembled them
+                  into a time-lapse video for storytelling.
+                </li>
+              </ol>
+            </div>
+
+            <div class="detail-section">
+              <h4>Outcome &amp; Insights</h4>
+              <ul>
+                <li>
+                  Comprehensive ZIP-level view of rent trends from 2015 to
+                  2026, revealing sustained growth across the region.
+                </li>
+                <li>
+                  Clear identification of high-cost clusters and emerging
+                  rent-growth corridors in Southern California.
+                </li>
+                <li>
+                  Time-lapse animation provides an accessible, compelling
+                  narrative of regional housing cost dynamics over a decade.
+                </li>
+              </ul>
+
+              <h4 class="mt-1">Portfolio Highlights</h4>
+              <ul>
+                <li>Spatial data integration (CSV + shapefiles)</li>
+                <li>Automated time-series animation via PyQGIS scripting</li>
+                <li>Graduated symbology and data classification</li>
+                <li>Region-specific spatial filtering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
